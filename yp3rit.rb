@@ -53,6 +53,7 @@ $lin="==========================================================================
 					ofile.close
 				end
 			}
+			shodan	
 		end
 
 		def honyt
@@ -67,8 +68,9 @@ $lin="==========================================================================
 			x = (doc.xpath("//text()").text)
 			if x<=risk then
 				print ("\n  #{ip.chomp} "+" -- #{x}\n")
+			
 			end
-	
+		shodan
 		end
 
 		def shod
@@ -80,6 +82,7 @@ $lin="==========================================================================
 			result['matches'].each{ |host|
 			        puts host['ip_str']
 			}
+		shodan
 		end
 
 	def masscan
