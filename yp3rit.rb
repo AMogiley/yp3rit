@@ -17,12 +17,13 @@ $lin="==========================================================================
 			shodan
 		elsif prog == "exit" || prog == "e"
 			abort
+		else whiche
 		end
 	end
 
 	def shodan
 		print ("\n"+$lin+"\n")
-		print ("\n Ok, you can try to test \n (f) Test honypot ip's file \n (h) Test target host on honypot \n (s) Shodan search \n\n")
+		print ("\n Ok, you can try to test \n (f) Test honypot ip's file \n (h) Test target host on honypot \n (s) Shodan search \n (b) Back \n\n")
 		print (" --> ")
 		way = gets().chomp()
 		if way == "f" then
@@ -32,7 +33,7 @@ $lin="==========================================================================
 		elsif way == "s"
 			shod
 		elsif way == "b"
-			which
+			whiche
 
 		end
 	end
@@ -86,7 +87,7 @@ $lin="==========================================================================
 			print (" output => #{oput} \n\n")
 			result = api.search(qry)
 			result['matches'].each{ |host|
-			        puts host['ip_str']
+			        #puts host['ip_str']
 				ip = (host['ip_str'])
 				ofile = File.new("#{oput}", 'a')			
 				print ("#{ip}\n")
@@ -118,6 +119,7 @@ $lin="==========================================================================
 			puts ("==============================")
 			print ("\n\n        !  #{host_count} hosts\n\n")
 			puts ("==============================")
+			whiche
 		elsif run == "back" || run == "b" then		
 			whiche
 		else masscan
@@ -147,7 +149,7 @@ $lin="==========================================================================
 		elsif prog == "5" || prog == "mysql"
 			mysql
 		elsif prog == "u" || prog == "unusual"
-			system ("nmap --top-ports #{@rports} #{opt} --script unusual-port #{host}")
+			system ("nmap --top-ports #{@rports} #{@opts} --script unusual-port #{@rhosts}")
 			which		
 		elsif prog == "t" || prog == "target"
 			system ("nmap #{@opts} #{@rhosts}")
@@ -215,7 +217,7 @@ $lin="==========================================================================
 			end
 		
 			def ssh
-				print ("\n (1) Check SSH Protocol Version 1 \n (2) Report number of algorithms (for encryption, compression, etc.) of SSH2 server \n (3) Returns authentication methods \n (4) Show the target server's key fingerprint  \n (5) Run remote command on server \n (6) Brute \n (0) Exit \n (s) Back  \n\n")
+				print ("\n (1) Check SSH Protocol Version 1 \n (2) Report number of algorithms (for encryption, compression, etc.) of SSH2 server \n (3) Returns authentication methods \n (4) Show the target server's key fingerprint  \n (5) Run remote command on server \n (6) Brute \n (0) Exit \n (b) Back  \n\n")
 				print ("\n\n  RUN > ")
 				runs= gets().chomp()		
 				
@@ -278,7 +280,7 @@ $lin="==========================================================================
 		
 			def ssl
 		
-				print ("\n (1) Scan target\n (2) CVE-2014-0224 \n      File SSL CSS-injection\n (3) SSL cert-intaddr IP.4  \n (4) Retrieves host's time and date from its TLS ServerHello response \n (5) CVE 2015-4000  \n     Weak ephemeral Diffie-Hellman parameter detection for SSL/TLS services \n (0) Exit \n (b) Back  \n\n")
+				print ("\n (1) Scan target\n (2) CVE-2014-0224 \n      File SSL CSS-injection\n (3) SSL cert-intaddr IP.4  \n (4) Retrieves host's time and date from its TLS ServerHello response \n (5) CVE 2015-4000  \n     Weak ephemeral Diffie-Hellman parameter detection for SSL/TLS services \n (b) Back \n (0) Exit \n\n")
 				print ("\n\n  RUN > ")
 				runs= gets().chomp()
 				if runs == "1" then
