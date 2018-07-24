@@ -21,6 +21,8 @@ $lin="==========================================================================
 		end
 	end
 
+		#Need to create one function Shodat to put api key in one variable
+		
 	def shodan
 		print ("\n"+$lin+"\n")
 		print ("\n Ok, you can try to test \n (f) Test honypot ip's file \n (h) Test target host on honypot \n (s) Shodan search \n (b) Back \n\n")
@@ -39,7 +41,7 @@ $lin="==========================================================================
 	end
 
 		def honyf
-			key= ("WA9rlYKJpojwY8DUeLwbz9sESG5m8YRc");		
+#			key= ("!!!PUT API KEY HERE!!!");		
 			print ("\n FILE > ")
 			input= gets().chomp()
 			print (" file => #{input} \n\n OUTPUT > ")
@@ -67,7 +69,7 @@ $lin="==========================================================================
 			print (" rhost => #{ip} \n\n RISK > ")
 			risk= gets().chomp()
 			print (" risk => #{risk} \n\n")
-			key= ("WA9rlYKJpojwY8DUeLwbz9sESG5m8YRc");
+#			key= ("!!!PUT API KEY HERE!!");
 			doc = Nokogiri::HTML(open("https://api.shodan.io/labs/honeyscore/#{ip}?key=#{key}"));
 			x = (doc.xpath("//text()").text)
 			if x<=risk then
@@ -78,7 +80,7 @@ $lin="==========================================================================
 		end
 
 		def shod
-			api = Shodan::Shodan.new('WA9rlYKJpojwY8DUeLwbz9sESG5m8YRc')
+#			api = Shodan::Shodan.new("!!!PUT API KEY HERE!!")
 			print (" QUERY > ")
 			STDOUT.flush
 			qry = gets.chomp
@@ -99,7 +101,7 @@ $lin="==========================================================================
 
 	def masscan
 		print ("\n"+$lin+"\n\n")
-		print ("\n\n  MASSCAN \n\n   So now you will chose port and ip diapason file, \n  put the nomber of the port (usally 3306) \n  and stsic link to the file.\n\n INPUT > ")
+		print ("\n\n  MASSCAN \n\n   So now you will chose port and ip diapason file, \n  and satic link to the file.\n\n INPUT > ")
 		file = gets().chomp()
 		print (" input => #{file} \n\n RPORT > ")
 		port = gets().chomp()
@@ -129,7 +131,7 @@ $lin="==========================================================================
 	def nmap
 	def which
 		print ("\n"+$lin+"\n")
-		print ("\nWhat aru you going to test: \n\n  (1) FTP \n  (2) SSH \n  (3) SSL \n  (4) VULN \n  (5) MySQL \n  (u) Unusual-port (number of top ports) \n  (t) Scan target without ports \n  (b) Back   \n\n  > ")
+		print ("\nWhat are you going to test: \n\n  (1) FTP \n  (2) SSH \n  (3) SSL \n  (4) VULN \n  (5) MySQL \n  (u) Unusual-port (number of top ports) \n  (t) Scan target without ports \n  (b) Back   \n\n  > ")
 		prog= gets().chomp()
 		print ("\n\n  RHOST > ")
 		@rhosts= gets().chomp()
