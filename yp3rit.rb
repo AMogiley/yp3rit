@@ -6,6 +6,7 @@ require 'shodan'
 
 print (" \n\n  \x1b[40m\x1b[1m\x1b[37m______________________________________________________________________________________________\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m#####\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m####\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m#####\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m######\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m########\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[1m\x1b[37m~~~~~~~~\x1b[40m\x1b[1m\x1b[33m######\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~\x1b[40m\x1b[1m\x1b[33m####\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m#\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m######\x1b[40m\x1b[1m\x1b[37m~~~~~~~\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[40m\x1b[1m\x1b[33m#####\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m#####\x1b[40m\x1b[1m\x1b[37m~~~~~\x1b[40m\x1b[1m\x1b[33m###\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m#####\x1b[40m\x1b[1m\x1b[37m~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[33m#####\x1b[40m\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[1m\x1b[37m~~~~~~~~\x1b[40m\x1b[1m\x1b[33m######\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~\x1b[40m\x1b[1m\x1b[33m#\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m######\x1b[40m\x1b[1m\x1b[37m~~~~~~~\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~~\x1b[40m\x1b[1m\x1b[33m####\x1b[40m\x1b[1m\x1b[37m~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~\x1b[40m\x1b[1m\x1b[33m######\x1b[40m\x1b[1m\x1b[37m~~~~~\x1b[40m\x1b[1m\x1b[33m##\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[1m\x1b[37m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[40m\x1b[1m\x1b[37m|\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\x1b[40m\x1b[0m  \n  \x1b[40m\x1b[1m\x1b[37m''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''\x1b[0m  \n")
 $lin="================================================================================"
+$key= ("");  #change me
 	def whiche
 		print ("\n\n  You may try to search it by masscan or nmap \n\n  (m) masscan \n  (n) nmap  \n  (s) Shodan \n\n >")
 		prog= gets().chomp()
@@ -20,8 +21,6 @@ $lin="==========================================================================
 		else whiche
 		end
 	end
-
-		#Need to create one function Shodat to put api key in one variable
 		
 	def shodan
 		print ("\n"+$lin+"\n")
@@ -41,7 +40,6 @@ $lin="==========================================================================
 	end
 
 		def honyf
-#			key= ("!!!PUT API KEY HERE!!!");		
 			print ("\n FILE > ")
 			input= gets().chomp()
 			print (" file => #{input} \n\n OUTPUT > ")
@@ -50,7 +48,7 @@ $lin="==========================================================================
 			risk= gets().chomp()
 			print (" risk => #{risk} \n")
 			file = File.open("#{input}")
-			file.each {|line| x = Nokogiri::HTML(open("https://api.shodan.io/labs/honeyscore/#{line.chomp}?key=#{key}")).xpath("//text()").text.chomp
+			file.each {|line| x = Nokogiri::HTML(open("https://api.shodan.io/labs/honeyscore/#{line.chomp}?key=#{$key}")).xpath("//text()").text.chomp
 				if x<=risk then
 					ofile = File.new("#{oput}", 'a')			
 					print ("#{line.chomp} "+" -- #{x}\n")
@@ -69,8 +67,7 @@ $lin="==========================================================================
 			print (" rhost => #{ip} \n\n RISK > ")
 			risk= gets().chomp()
 			print (" risk => #{risk} \n\n")
-#			key= ("!!!PUT API KEY HERE!!");
-			doc = Nokogiri::HTML(open("https://api.shodan.io/labs/honeyscore/#{ip}?key=#{key}"));
+			doc = Nokogiri::HTML(open("https://api.shodan.io/labs/honeyscore/#{ip}?key=#{$key}"));
 			x = (doc.xpath("//text()").text)
 			if x<=risk then
 				print ("\n  #{ip.chomp} "+" -- #{x}\n")
@@ -80,7 +77,7 @@ $lin="==========================================================================
 		end
 
 		def shod
-#			api = Shodan::Shodan.new("!!!PUT API KEY HERE!!")
+			api = Shodan::Shodan.new("WA9rlYKJpojwY8DUeLwbz9sESG5m8YRc")
 			print (" QUERY > ")
 			STDOUT.flush
 			qry = gets.chomp
@@ -89,7 +86,6 @@ $lin="==========================================================================
 			print (" output => #{oput} \n\n")
 			result = api.search(qry)
 			result['matches'].each{ |host|
-			        #puts host['ip_str']
 				ip = (host['ip_str'])
 				ofile = File.new("#{oput}", 'a')			
 				print ("#{ip}\n")
