@@ -1,9 +1,9 @@
 # yp3rit
-need to install nmap and masscan first then start:
-
+Need to install nmap and masscan first then start:
+sudo apt -y install nmap
+sudo apt -y install masscan
 sudo bash install.sh
 
-then put shodan api key in line 42, 81 and 70 sory for this someday i will fix it.
-
+Then put shodan api key in line 9 
 Script for ip scan with masscan, nmap nse scripts for FTP, SSH, SSL, MySQL and vuln scan.
-shodan search IP's by youre query and may test if it is honeypot.
+Shodan search IP's by youre query and may test if it is honeypot.
